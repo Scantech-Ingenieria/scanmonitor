@@ -49,23 +49,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
         $enrutar -> enrutamiento();
 
         include "modulos/modales/modales-".$_GET["ruta"].".php";
-
       } else {
-        include "modulos/home.php";
+        include "modulos/slider.php";
       }
-
       include "modulos/footer.php";
-
-
     } else {
-      include "modulos/login.php";
+      include "../index.php";
     }
-
-
   ?>
-
-
-
 <script>
   $(function () {
     $('input').iCheck({
@@ -86,26 +77,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
       });
     </script>
 <script src="views/dist/js/slider.js"></script>
-
 <script src="views/dist/js/rutaAmigable.js"></script>
 <script src="views/dist/js/usuarios.js"></script>
 <script src="views/dist/js/inicio.js"></script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.26.11/dist/sweetalert2.all.min.js"></script></body>
 </html>

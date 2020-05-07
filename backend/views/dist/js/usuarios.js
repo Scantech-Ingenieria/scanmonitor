@@ -84,6 +84,8 @@ $(document).ready(function(){
 				$('#formu-editar-Usuarios input[name="id_Usuarios"]').val(valor.id_admin)
 				$('#formu-editar-Usuarios input[name="urlUsuarios"]').val(valor.password)
 				$('#formu-editar-Usuarios input[name="correo"]').val(valor.correo_admin)
+				$('#formu-editar-Usuarios select[name="TipoUsuario"]').val(valor.rango)
+
 
 
 				$('#formu-editar-Usuarios input[name="tituloUsuarios"]').val(valor.nombre_usuarios)

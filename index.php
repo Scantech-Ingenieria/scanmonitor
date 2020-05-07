@@ -6,7 +6,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Bootstrap Login Form Template</title>
+        <title>ScanMonitor</title>
 
         <!-- CSS -->
         <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
@@ -63,12 +63,22 @@
                           <form role="form" action="" method="post" class="login-form">
                             <div class="form-group">
                               <label class="sr-only" for="form-username">Usuario</label>
-                                <input type="text" name="form-username" placeholder="Usuario..." class="form-username form-control" id="form-username">
+                                <input type="text"  placeholder="Usuario..." name="user"  class="form-username form-control" id="form-username">
                               </div>
                               <div class="form-group">
                                 <label class="sr-only" for="form-password">Contraseña</label>
-                                <input type="password" name="form-password" placeholder="Contraseña..." class="form-password form-control" id="form-password">
+                                <input type="password" name="password" placeholder="Contraseña..." class="form-password form-control" id="form-password">
                               </div>
+
+                               <?php 
+require_once "controllers/sesion.controller.php";
+require_once "models/sesion.modelo.php";
+
+
+        $iniciarSesion = new ControllerSesion();
+        $iniciarSesion -> iniciarSesionCtr();
+
+      ?>
                              <a href="backend/index.php"> <button type="submit" class="btn">Ingresar!</button></a>
                           </form>
                         </div>
@@ -92,12 +102,13 @@
             
         </div>
 
-
+ 
         <!-- Javascript -->
         <script src="assets/js/jquery-1.11.1.min.js"></script>
         <script src="assets/bootstrap/js/bootstrap.min.js"></script>
         <script src="assets/js/jquery.backstretch.min.js"></script>
         <script src="assets/js/scripts.js"></script>
+
         
         <!--[if lt IE 10]>
             <script src="assets/js/placeholder.js"></script>

@@ -41,9 +41,19 @@
               </li>
 
               <li class="user-footer">
+
+
+<?php 
+if ($_SESSION["rango"]=='superadmin') {
+  # code...
+?>
                 <div class="pull-left">
                   <a href="usuarios" class="btn btn-default btn-flat">Perfil</a>
                 </div>
+
+                <?php
+}
+                ?>
                 <div class="pull-right">
                   <a href="salir" class="btn btn-default btn-flat">Salir</a>
                 </div>

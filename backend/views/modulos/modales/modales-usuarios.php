@@ -37,7 +37,18 @@
               <img src="" id="imagenUsuarios" alt="" class="thumbnail" width="200" style="display: none">
             </div>
           </div>
+   <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Tipo Usuario</label>
+            <div class="col-sm-10">
+            <select class="form-control" name="TipoUsuario" >
+              <option value="" selected >Seleccione tipo de usuario</option>
+              <option value="usuario" >Usuario</option>
+              <option value="superadmin"  >Super Admin</option>
 
+              </select>
+         </div>
+
+          </div>
 
           <input type="hidden" name="tipoOperacion" value="insertarUsuarios">
       </div>
@@ -89,6 +100,18 @@
             <div class="col-sm-10">
               <input type="text"  class="form-control" placeholder="Contraseña" required name="urlUsuarios">
             </div>
+          </div>
+             <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Tipo Usuario</label>
+            <div class="col-sm-10">
+            <select class="form-control" name="TipoUsuario" >
+              <option value="" selected >Seleccione tipo de usuario</option>
+              <option value="usuario"  >Usuario</option>
+              <option value="superadmin" >Super Admin</option>
+
+              </select>
+         </div>
+
           </div>
 
 

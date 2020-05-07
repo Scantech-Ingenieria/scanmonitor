@@ -3,7 +3,7 @@
 session_destroy();
 
 echo '<script>
-	window.location = "login"
+	window.location = "../index.php"
 </script>';
 
 ?>

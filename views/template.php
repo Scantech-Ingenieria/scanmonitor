@@ -22,25 +22,11 @@
     <link rel="stylesheet" href="<?php echo $urlFrontEnd; ?>views/css/estilos_1.7.css">
     <link rel="stylesheet" href="<?php echo $urlFrontEnd; ?>views/css/bootstrap.css">
       <link rel="stylesheet" type="text/css" href="views/css/styletable.css">
-
-
-
-
-
-
-
-
-
-
    
   </head>
   <body>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-
-
-
-
 
 
     <?php
