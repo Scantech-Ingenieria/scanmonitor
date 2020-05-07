@@ -1,0 +1,123 @@
+// FUNCIONES PARA SUBIR IMÁGENES JPEG Y PNG A DIRECTORIO
+
+list($ancho, $alto) = getimagesize($datos["imagen"]["tmp_name"]);	
+
+		$nuevoAncho = 1024;
+		$nuevoAlto = 768;
+
+		$directorio = "../views/img/slide";
+
+		if($datos["imagen"]["type"] == "image/jpeg"){
+
+			$rutaImagen = $directorio."/".md5($datos["imagen"]["name"]).".jpeg";
+
+			$origen = imagecreatefromjpeg($datos["imagen"]["tmp_name"]);						
+			$destino = imagecreatetruecolor($nuevoAncho, $nuevoAlto);
+
+			imagecopyresized($destino, $origen, 0, 0, 0, 0, $nuevoAncho, $nuevoAlto, $ancho, $alto);
+
+			imagejpeg($destino, $rutaImagen);
+
+		}
+
+		if($datos["imagen"]["type"] == "image/png"){
+
+			$rutaImagen = $directorio."/".md5($datos["imagen"]["name"]).".png";
+
+			$origen = imagecreatefrompng($datos["imagen"]["tmp_name"]);						
+
+			$destino = imagecreatetruecolor($nuevoAncho, $nuevoAlto);
+
+			imagealphablending($destino, FALSE);
+	
+			imagesavealpha($destino, TRUE);
+
+			imagecopyresized($destino, $origen, 0, 0, 0, 0, $nuevoAncho, $nuevoAlto, $ancho, $alto);
+
+			imagepng($destino, $rutaImagen);
+
+		}
+
+// FIN FUNCIONES PARA SUBIR IMÁGENES JPEG Y PNG A DIRECTORIO
+
+//VENTANA MODAL DE INGRESO
+
+<div class="modal fade" id="modal-insertar-slider"  tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Insertar Nuevo Slider</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form id="formu-nuevo-slider">
+          <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Título</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" placeholder="Titulo" required name="tituloSlider">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Imagen</label>
+            <div class="col-sm-10">
+              <input type="file" class="form-control"  id="imagen" name="imagenSlider">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Vínculo</label>
+            <div class="col-sm-10">
+              <input type="text"  class="form-control" placeholder="vínculo" required name="urlSlider">
+
+              
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Descripcion</label>
+            <div class="col-sm-10">
+              <textarea class="form-control" placeholder="Texto descriptivo" required rows="5" name="descripcionSlider"></textarea>
+            </div>
+          </div>
+       
+          <input type="hidden" name="tipoOperacion" value="insertarSlider">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        <button type="submit" class="btn btn-primary">Guardar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+//VENTANA MODAL DE INGRESO
+
+$("#imagen").change(function(){
+	
+	imgSlider = this.files[0];
+
+		if( imgSlider["type"] != "image/jpeg" && imgSlider["type"] != "image/png") {
+			$("#custom").val("")
+
+			swal({
+				type: 'error',
+				title: 'No es una imagen!!',
+				text: 'Debe subir imagenes en formato JPEG o PNG',
+			})
+		} 
+		if ( imgSlider["type"] > 2000000) {
+			$("#imagenSlider").val("")
+
+			swal({
+				type: "Error al subir la imagen",
+				text: "La imagen debe pesar MAX 2MB",
+				icon: 'error',
+				confirmButtonText: "¡Cerrar!",
+			})
+		}
+
+	}
+
+	
+})

@@ -1,0 +1,457 @@
+.slider .row {
+	display: block;
+}
+.slider {
+	position: relative;
+
+
+	padding: 0;
+	margin: 0px;
+	height: 100%;
+	overflow: hidden;
+
+
+
+}
+
+
+
+
+.slider ul {
+	list-style: none;
+	position: relative;
+	padding-left: 0;
+	width: 400%;
+
+	left: 0%;
+	display: table;
+	margin: auto;
+	clear: both;
+}
+.slider ul li {
+	width: 25%;
+	position: relative;
+	float: left;
+	height: 760px;
+}
+.slider li img {
+	width: 100%;
+
+}
+
+.slider .infoSlide {
+	width: 75%;
+	position: absolute;
+	left: 0;
+	right: 0;
+
+	margin-right: auto;
+	top:0;
+}
+.slider .infoSlide , .slider .infoSlide img {
+	width: 100%;
+
+}
+
+
+
+.textoSlide{
+ position: absolute;
+  top: 20px;
+  left: 100px;
+  z-index: 1;
+  visibility: visible;
+
+
+}
+
+
+.slider .infoSlide img {
+	top:0px;
+}
+.flechas {
+	position: absolute;
+	font-size: 30px;
+	cursor: pointer;
+	padding:10px;
+	z-index: 10;
+}
+.slider #left {
+	color: black;
+	top:40%;
+	left: 0;
+	opacity: .5;
+	transition: all linear .3s
+
+}
+.slider #right {
+	color: black;
+	top:40%;
+	right: 0;
+	opacity: .5;
+	transition: all linear .3s
+}
+.slider #left:hover, .slider #right:hover {
+	opacity: 1;
+}
+
+#paginacion {
+	position: absolute;
+	bottom: 5%;
+	left: 8%;
+	width: 400px;
+	text-align: left;
+}
+#paginacion li {
+	font-size: 14px;
+	display: inline-block;
+	opacity: .4;
+	color: black;
+	margin: 0 -30px;
+}
+#paginacion li:first-child {
+	opacity: .9;
+}
+@media (max-width:1300px) {
+
+.info{
+	height: 300px;
+}
+.lk{
+	font-size:25px;
+	left: 600px;
+	width: 350px;
+}
+}
+@media (max-width:992px) {
+.slider{
+	height: 700px;
+}
+.lk{
+	top:460px;
+width: 550px;
+font-size:25px;
+left: 200px;
+
+}
+.slider li img {
+    height: 520px!important;
+}
+.contr{
+margin-top: 20px;
+}
+.contr h3{
+margin-left: 20px!important;
+font-size:30px!important;
+line-height:28px!important;
+}
+.perfil div div img{
+width: 90%!important;
+margin-left: 15px!important;
+}
+.proyect div{
+	margin-left: 0px!important;
+}
+.proyect div h4{
+font-size:18px!important;
+line-height:25px!important;
+}
+.conoce{
+top:70%!important;
+width:60%!important;
+}
+.proyect h2{
+font-size:30px!important;
+}
+}
+@media (max-width:800px) {
+.slider{
+	height: 700px;
+}
+.lk{
+	top:460px;
+width: 550px;
+font-size:25px;
+left: 100px;
+
+}
+.slider li img {
+    height: 520px!important;
+}
+#objet{
+	width: 95%;
+}
+}
+@media (max-width:700px) {
+.slider{
+	height: 700px;
+}
+.lk{
+	top:430px;
+width: 350px;
+font-size:25px;
+left: 40px;
+
+}
+.slider li img {
+    height: 520px!important;
+}
+#objet{
+	width: 95%;
+}
+#objet a span{
+margin-top: 15%;
+}
+.contr{
+margin-top: 20px;
+}
+.contr h3{
+margin-left: 20px!important;
+font-size:28px!important;
+line-height:28px!important;
+}
+.perfil div div img{
+width: 90%!important;
+margin-left: 15px!important;
+}
+.proyect div{
+	margin-left: 0px!important;
+}
+.proyect div h4{
+font-size:18px!important;
+line-height:25px!important;
+}
+.conoce{
+top:70%!important;
+width:60%!important;
+}
+.proyect h2{
+font-size:30px!important;
+}
+}
+
+@media (max-width:600px) {
+.slider{
+	height: 700px;
+}
+.lk{
+	top:430px;
+width: 250px;
+font-size:25px;
+left: 70px;
+
+}
+.slider li img {
+    height: 520px!important;
+}
+#objet{
+	width: 95%;
+}
+#objet a span{
+margin-top: 18%;
+}
+.contr{
+margin-top: 20px;
+}
+.contr h3{
+margin-left: 20px!important;
+font-size:25px!important;
+line-height:28px!important;
+}
+.perfil div div img{
+width: 90%!important;
+margin-left: 15px!important;
+}
+.proyect div{
+	margin-left: 0px!important;
+}
+.proyect div h4{
+font-size:18px!important;
+line-height:25px!important;
+}
+.conoce{
+top:70%!important;
+width:60%!important;
+}
+.proyect h2{
+font-size:30px!important;
+}
+}
+@media (max-width:500px) {
+.slider{
+	height: 600px;
+}
+.lk{
+	top:400px;
+width: 250px;
+font-size:25px;
+left: 0px;
+
+}
+.slider li img {
+    height: 420px!important;
+}
+#objet{
+	width: 95%;
+}
+#objet a span{
+margin-top: 20%;
+}
+.contr{
+margin-top: 20px;
+}
+.contr h3{
+margin-left: 20px!important;
+font-size:20px!important;
+line-height:28px!important;
+}
+.perfil div div img{
+width: 90%!important;
+margin-left: 15px!important;
+}
+.proyect div{
+	margin-left: 0px!important;
+}
+.proyect div h4{
+font-size:18px!important;
+line-height:25px!important;
+}
+.conoce{
+top:70%!important;
+width:60%!important;
+}
+.proyect h2{
+font-size:30px!important;
+}
+}
+@media (max-width:430px) {
+.slider{
+	height: 600px;
+}
+.lk{
+	top:300px;
+width: 250px;
+font-size:25px;
+left: 0px;
+
+}
+#objet{
+	width: 95%;
+}
+#objet a span{
+margin-top: 20%;
+}
+.contr{
+margin-top: 20px;
+}
+.contr h3{
+margin-left: 20px!important;
+font-size:20px!important;
+line-height:28px!important;
+}
+.perfil div div img{
+width: 100%!important;
+margin-left: 0px!important;
+}
+.proyect div{
+	margin-left: 0px!important;
+}
+.proyect div h4{
+font-size:18px!important;
+line-height:25px!important;
+}
+.conoce{
+top:70%!important;
+width:60%!important;
+}
+.proyect h2{
+font-size:30px!important;
+}
+}
+
+@media (max-width:400px) {
+.slider{
+	height: 520px;
+}
+.lk{
+	top:300px;
+width: 250px;
+font-size:25px;
+left: 0px;
+
+}
+#objet{
+	width: 90%;
+}
+.contr{
+margin-top: 20px;
+}
+.contr h3{
+margin-left: 20px!important;
+font-size:20px!important;
+line-height:28px!important;
+}
+.perfil div div img{
+width: 100%!important;
+margin-left: 0px!important;
+}
+.proyect div{
+	margin-left: 0px!important;
+}
+.proyect div h4{
+font-size:18px!important;
+line-height:25px!important;
+}
+.conoce{
+top:70%!important;
+width:60%!important;
+}
+.proyect h2{
+font-size:30px!important;
+}
+}
+@media (max-width:350px) {
+.slider{
+	height: 520px;
+
+}
+.lk{
+	top:300px;
+width: 250px;
+font-size:25px;
+left: 0px;
+
+}
+.contr{
+margin-top: 20px;
+}
+.contr h3{
+margin-left: 20px!important;
+font-size:20px!important;
+line-height:28px!important;
+}
+.perfil div div img{
+width: 100%!important;
+margin-left: 0px!important;
+}
+.proyect div{
+	margin-left: 0px!important;
+}
+.proyect div h4{
+font-size:18px!important;
+line-height:25px!important;
+}
+.conoce{
+top:70%!important;
+width:60%!important;
+}
+.proyect h2{
+font-size:30px!important;
+}
+}
+@media (max-width:280px) {
+.slider{
+	height: 500px;
+}
+
+}
