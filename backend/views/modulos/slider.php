@@ -68,12 +68,7 @@ cursor:pointer;
     <li id="miorden_<?php  echo $value["id"]; ?>">
        
 
-        
-
-
-
-
-        
+           
 
 <?php
 

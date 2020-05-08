@@ -14,21 +14,14 @@ Class ModeloUsuarios {
 
 	static public function mdlCrearUsuarios($tabla, $datos, $rutaImagen) {
 
-$nombre=$datos['nombre'];
-$sqltabla="create table `$nombre` (
-  `alumno_id` int(10) DEFAULT NULL,
-  `nombres` varchar(80) DEFAULT NULL,
-  `apellidos` varchar(50) DEFAULT NULL,
-  `f_nacimiento` date DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;";
-		$sql = Conexion::conectar()->prepare("INSERT INTO $tabla() VALUES (NULL, :nombre, :correo, :pass, :imagen,:tipousuario,  NOW())");
 
-		$sql = Conexion::conectar()->prepare("$sqltabla");
+
+		$sql = Conexion::conectar()->prepare("INSERT INTO $tabla() VALUES (NULL, :nombre, :correo, :pass, :imagen,:tipousuario,:data,  NOW())");
         $sql->bindParam(":nombre", $datos["nombre"], PDO::PARAM_STR);
         $sql->bindParam(":correo", $datos["correo"], PDO::PARAM_STR);
 		$sql->bindParam(":pass", $datos["pass"], PDO::PARAM_STR);
 		$sql->bindParam(":tipousuario", $datos["tipousuario"], PDO::PARAM_STR);
-
+        $sql->bindParam(":data",$datos["nombre"], PDO::PARAM_STR);
 		$sql->bindParam(":imagen", $rutaImagen, PDO::PARAM_STR);
 
 		if( $sql -> execute() ) {

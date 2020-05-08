@@ -13,21 +13,11 @@ session_start();
 // echo $brazo03;
 // echo $brazo02;
 // echo $brazo01;
-
-
-
-
-
-
-
-
   if(isset($_POST["action"])) { // Se pasa una acción
         switch(sprintf("%d", $_POST["action"])) { // ¿Qué acción?
             case 1: 
 
               echo "Tarea completada!";
-
-
 $contratista=$_POST['contratista'];
 $fecha_inicial=$_POST['fecha_inicial'];
 $inputBrazo4=$_POST['inputBrazo4'];
@@ -36,12 +26,6 @@ $inputBrazo2=$_POST['inputBrazo2'];
 $inputBrazo1=$_POST['inputBrazo1'];
 $CD_PONTO1=$_POST['CD_PONTO'];
 $isFirst=$_POST['isFirst'];
-
-
-
-
-
-
 echo $contratista;
 echo $fecha_inicial;
 echo $inputBrazo4;
@@ -50,11 +34,6 @@ echo $inputBrazo2;
 echo $inputBrazo1;
 echo $CD_PONTO1;
 echo $isFirst;
-
-
-
-
-
 function getCantidadBrazos($CD_PONTO) {
       require("conns.php");
 
@@ -112,22 +91,15 @@ function getCantidadBrazos($CD_PONTO) {
         $result = $row['DT_PESAGEM']->format('Y-m-d\TH:i:s.000');
       else
         $result = "{no data on line}";
-
-
-
       sqlsrv_free_stmt($stmt);
       sqlsrv_close($conn);
-
       return $result;
     }
-    
+  
     // Muestra información de piezas y kilos de cada brazos, según id de balanza (CD_PONTO)
     // y a partir de la fecha inicial indicada (DT_PESAGEM_INICIAL)
     function getInfo($CD_PONTO, $NR_SAIDA, $DT_PESAGEM_INICIAL){
        require("conns.php");
-    
-
-
       $numBrazos = $NR_SAIDA;
 
       // Crea arrays individuales para cada brazo sólo la primera vez que la pagina carga
