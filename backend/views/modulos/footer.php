@@ -4,5 +4,5 @@
 
     </div>
     <!-- Default to the left -->
-    <strong>Copyright &copy; 2019 <a href=""></a>.</strong> Todos los derechos reservados.
+    <strong>Scantech Copyright &copy; 2020 <a href=""></a>.</strong> Todos los derechos reservados.
   </footer>

@@ -570,7 +570,6 @@
 
         return;
       }
-
       Button._jQueryInterface.call($(button), 'toggle');
     }
   }).on(Event$1.FOCUS_BLUR_DATA_API, Selector$1.DATA_TOGGLE_CARROT, function (event) {
@@ -585,17 +584,13 @@
     for (var i = 0, len = buttons.length; i < len; i++) {
       var button = buttons[i];
       var input = button.querySelector(Selector$1.INPUT);
-
       if (input.checked || input.hasAttribute('checked')) {
         button.classList.add(ClassName$1.ACTIVE);
       } else {
         button.classList.remove(ClassName$1.ACTIVE);
       }
     } // find all button toggles
-
-
     buttons = [].slice.call(document.querySelectorAll(Selector$1.DATA_TOGGLE));
-
     for (var _i = 0, _len = buttons.length; _i < _len; _i++) {
       var _button = buttons[_i];
 
@@ -619,13 +614,11 @@
     $.fn[NAME$1] = JQUERY_NO_CONFLICT$1;
     return Button._jQueryInterface;
   };
-
   /**
    * ------------------------------------------------------------------------
    * Constants
    * ------------------------------------------------------------------------
    */
-
   var NAME$2 = 'carousel';
   var VERSION$2 = '4.4.1';
   var DATA_KEY$2 = 'bs.carousel';
@@ -633,14 +626,11 @@
   var DATA_API_KEY$2 = '.data-api';
   var JQUERY_NO_CONFLICT$2 = $.fn[NAME$2];
   var ARROW_LEFT_KEYCODE = 37; // KeyboardEvent.which value for left arrow key
-
   var ARROW_RIGHT_KEYCODE = 39; // KeyboardEvent.which value for right arrow key
-
   var TOUCHEVENT_COMPAT_WAIT = 500; // Time for mouse compat events to fire after touch
-
   var SWIPE_THRESHOLD = 40;
   var Default = {
-    interval: 5000,
+    interval:500,
     keyboard: true,
     slide: false,
     pause: 'hover',

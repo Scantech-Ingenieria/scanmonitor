@@ -4,7 +4,7 @@ $array_cursos = $_POST['miorden'];
 
 $con = con();
 
-$orden = 1;
+$orden = 2;
 foreach($array_cursos as $id_curso){
 	$resultado_cursos = "UPDATE slider SET orden = $orden WHERE id = $id_curso";
 	$resultado_cursos = mysqli_query( $con,$resultado_cursos);	

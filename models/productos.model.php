@@ -4,10 +4,6 @@ require "conexion.php";
 
 class ModelProductos {
 
-
-
-
-
 	 static public function mdlMostrarUltimos4Prod($tabla) {
 
 
@@ -17,6 +13,11 @@ class ModelProductos {
 
 
 
+	}
+		static public function listarPesajeMdl($tabla) {
+		$sql = Conexion::conectar()->prepare("SELECT * FROM $tabla");
+		$sql -> execute();
+		return $sql -> fetchAll();
 	}
 
 	static public function mdlMostrarCategorias($tabla,$columna,$valor) {

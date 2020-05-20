@@ -1,23 +1,8 @@
-
 <?php 
 session_start();  
-
-// $brazo04=$_POST["inputBrazo4"];
-// $brazo03=$_POST["inputBrazo3"];
-// $brazo02=$_POST["inputBrazo2"];
-// $brazo01=$_POST["inputBrazo1"];
-
-
-
-// echo $brazo04;
-// echo $brazo03;
-// echo $brazo02;
-// echo $brazo01;
   if(isset($_POST["action"])) { // Se pasa una acción
         switch(sprintf("%d", $_POST["action"])) { // ¿Qué acción?
             case 1: 
-
-              echo "Tarea completada!";
 $contratista=$_POST['contratista'];
 $fecha_inicial=$_POST['fecha_inicial'];
 $inputBrazo4=$_POST['inputBrazo4'];
@@ -26,17 +11,8 @@ $inputBrazo2=$_POST['inputBrazo2'];
 $inputBrazo1=$_POST['inputBrazo1'];
 $CD_PONTO1=$_POST['CD_PONTO'];
 $isFirst=$_POST['isFirst'];
-echo $contratista;
-echo $fecha_inicial;
-echo $inputBrazo4;
-echo $inputBrazo3;
-echo $inputBrazo2;
-echo $inputBrazo1;
-echo $CD_PONTO1;
-echo $isFirst;
 function getCantidadBrazos($CD_PONTO) {
       require("conns.php");
-
       // Ultimo lote ingresado en tabla de pesaje
       $sql = "SELECT NR_SAIDA
           FROM LK_PESAGEM
@@ -45,25 +21,18 @@ function getCantidadBrazos($CD_PONTO) {
           GROUP BY nr_saida
           HAVING nr_saida IS NOT NULL
           ORDER BY NR_SAIDA";
-
       $stmt = sqlsrv_query( $conn, $sql );
-
       if( $stmt === false) {
           die( print_r( sqlsrv_errors(), true) );
       }
-        
       $cuentaBrazos = 0;
-
       while( $row = sqlsrv_fetch_array( $stmt, SQLSRV_FETCH_ASSOC) ) {
           $cuentaBrazos = $cuentaBrazos + 1;
       }
-
       sqlsrv_free_stmt( $stmt);
       sqlsrv_close($conn);
-
       return $cuentaBrazos;
     }
-
     function ultimoPesaje($DT_PESAGEM, $CD_PONTO, $NR_SAIDA) {
       $DT_PESAGEM = str_replace(' ', '', 
                        substr($DT_PESAGEM . ":00.000", 0, 10) . 'T' . 
@@ -609,14 +578,6 @@ echo "<td>L1</td>";
     if(isset($isFirst)) {
       // Id de balanza "CD_PONTO"
       $_SESSION["current"] = $CD_PONTO1;
-
-      echo $_SESSION["current"];
-      echo $_SESSION["current"];
-      echo $_SESSION["current"];
-      echo $_SESSION["current"];
-      echo $_SESSION["current"];
-
-
       // Fecha y hora de inicio de conteo
       $_SESSION["fecha_inicial_get"] = $fecha_inicial;  
       $_SESSION["fecha_inicial"] = str_replace(' ', '', 
@@ -673,14 +634,10 @@ echo "<td>L1</td>";
 
       $_SESSION["contratista"] = $contratista;
 
-
-
-
-
 }else {     
     } 
 
-echo "<div style='height:1000px;'>";
+echo "<div style='height:700px;'>";
 echo "<div id='main-wrapper'>";
   echo "<div id='logo-cliente'>";
      echo "<img src='logo_cbay.png' />";

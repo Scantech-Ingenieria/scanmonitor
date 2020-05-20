@@ -23,7 +23,7 @@ session_start();
 
 				echo '
 					<script>
-						window.location = "backend/index.php"
+						window.location = "backend/slider"
 					</script>
 				';
 

@@ -13,7 +13,11 @@ class ControllerProductos {
 		return $respuesta;
 
 	}
-
+public function listarPesajeCtr() {
+		$tabla = "pesaje";
+		$respuesta = ModelProductos::listarPesajeMdl($tabla);
+		return $respuesta;
+	}
 	static public function ctrMostrarCategorias ($columna,$valor) {
 
 		$tabla = "categorias";
