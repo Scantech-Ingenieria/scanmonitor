@@ -65,12 +65,10 @@ Formulario
         <li><a href="#"><i class="fa fa-dashboard"></i> Menú</a></li>
         <li class="active">Archivos</li>
       </ol>
-
       <!-- Button trigger modal -->
 <button style="margin-left: 70%;"type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">
 Último Registro
 </button>
-
 <!-- Modal -->
 <div style="color :black;"class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
@@ -81,27 +79,69 @@ Formulario
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body">
-         <div class="form-group">
-            <label for="recipient-name" class="col-form-label">Balanza:</label>
-          </div>
-           <div class="form-group">
-            <label for="recipient-name" class="col-form-label">Fecha:</label>
+      <div class="modal-body">    
 
-          </div>
-<div class="form-group">
-            <label for="recipient-name" class="col-form-label">Nro de Brazos:</label>
+        <table class="table table-striped table-dark">
 
-          </div>
-<div class="form-group">
-            <label for="recipient-name" class="col-form-label">Contratista:</label>        
-  
-          </div>
+  <tbody>
+             <?php 
+          $pesaje = ControllerSlider::listarPesajeCtr();
+
+foreach ($pesaje as $key => $value) { ?>
+    <tr>
+      <th scope="row">Balanza :</th>
+      <td> <?php echo $value["cd_ponto"]; ?></td>
+
+    </tr>
+    <tr>
+      <th scope="row">Fecha :</th>
+      <td><?php echo $value["fecha"]; ?></td>
+
+    </tr>
+            <?php if ($value["brazo_uno"]!=''): ?>
+
+    <tr>
+      <th scope="row">Brazo 1:</th>
+      <td><?php echo $value["brazo_uno"]; ?></td>
+
+    </tr>
+            <?php endif ?>
+               <?php if ($value["brazo_dos"]!=''): ?>
+
+    <tr>
+      <th scope="row">Brazo 2:</th>
+      <td><?php echo $value["brazo_dos"]; ?></td>
+
+    </tr>
+            <?php endif ?>
+                          <?php if ($value["brazo_tres"]!=''): ?>
+
+    <tr>
+      <th scope="row">Brazo 3:</th>
+      <td><?php echo $value["brazo_tres"]; ?></td>
+
+    </tr>
+            <?php endif ?>
+                                      <?php if ($value["brazo_cuatro"]!=''): ?>
+
+    <tr>
+      <th scope="row">Brazo 4:</th>
+      <td><?php echo $value["brazo_cuatro"]; ?></td>
+
+    </tr>
+            <?php endif ?>
+             <?php } ?>
+
+  </tbody>
+</table>
+ 
+            
+                  
+
 
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
-       
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>     
       </div>
     </div>
   </div>

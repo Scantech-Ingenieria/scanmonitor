@@ -49,6 +49,7 @@
 }
 
     </style>
+ 
 <div class="modal fade" id="modal-insertar-slider"  tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -149,8 +150,9 @@
             <div class="col-sm-10">
           <input class="form-control" placeholder="Titulo" id="titulo" type="text" name="titulo" required>
             </div>
-          </div>
-      <div class="form-group row">
+          </div> 
+                
+      <div class="form-group row" id="tiempoextension">
  <label class="col-sm-3 col-form-label" for="exampleFormControlSelect1">Asignar tiempo :</label>
             <div class="col-sm-7">
        <input type="text"  placeholder="Segundos" name="segundos"  class="form-control monto" onkeypress='return validaNumericos(event)' > 
@@ -159,6 +161,8 @@
  </div>
           <input type="hidden" name="tipoOperacion" value="actualizarSlider">
           <input type="hidden" name="id_slider">
+   <input type="hidden" id="extension3" name="extension"  >
+
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
@@ -350,5 +354,7 @@ $( function() {
              $("#exceliframe").css("display", "none")
 
   });
-</script>
 
+
+ 
+</script>

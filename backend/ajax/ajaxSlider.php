@@ -38,7 +38,9 @@ Class ajaxSlider {
 		$respuesta = ControllerSlider::ctrEditarSlider($id_slider);
 		$datos = array("id_slider"=>$respuesta["id"],
 			            "titulo"=>$respuesta["titulo"],
-			            "excel"=>$respuesta["excel"],		            
+			            "excel"=>$respuesta["excel"],
+			            "extension"=>$respuesta["extension"],		            
+
 						"tiempo"=>miles($respuesta["tiempo"])	
 						);
 		echo json_encode($datos);

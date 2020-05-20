@@ -131,6 +131,15 @@ $(document).ready(function(){
 				$('#formu-editar-slider input[name="id_slider"]').val(valor.id_slider)
 				$('#formu-editar-slider input[name="segundos"]').val(valor.tiempo)
 				$('#formu-editar-slider input[name="titulo"]').val(valor.titulo)
+				$('#formu-editar-slider input[name="extension"]').val(valor.extension)
+if(valor.extension=='video'){
+				$('#formu-editar-slider #tiempoextension').css("display", "none")
+}else{
+				$('#formu-editar-slider #tiempoextension').css("display", "block")
+
+}
+
+
 			}
 
 		})
